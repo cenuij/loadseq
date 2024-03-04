@@ -1,7 +1,7 @@
-import { basename, sleep } from '$lib/util.js';
+import { basename, sleep, wait } from '$lib';
 
 export async function load({ parent, data }) {
-	//	await parent();
+	if (wait(basename(import.meta.url))) await parent()
 
 	const ts = await sleep();
 
